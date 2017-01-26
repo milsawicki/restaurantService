@@ -39,4 +39,9 @@ public class OrderService {
         List<Test> orders = orderRepository.findByWaiter(waiter);
         return orders;
     }
+
+    public Test getOrderDetails(long testId) {
+        return  orderRepository.findByTestId(testId);
+//        return new Test();
+    }
 }

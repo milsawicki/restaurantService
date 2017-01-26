@@ -14,4 +14,5 @@ import java.util.List;
 public interface OrderRepository extends CrudRepository<Test, String> {
 
     public List<Test> findByWaiter(Waiter waiter);
+    public Test findByTestId(long testId);
 }

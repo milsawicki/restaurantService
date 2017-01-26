@@ -28,4 +28,9 @@ public class OrderController {
     public void addOrder(@PathVariable("waiterId") long waiterId, @RequestBody Test order) {
         orderService.addOrder(order, waiterId);
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/get/details/{testId}")
+    public Test getOrderDetails(@PathVariable("testId") long testId) {
+        return orderService.getOrderDetails(testId);
+    }
 }

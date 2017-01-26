@@ -14,7 +14,7 @@ public class Test {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long TestId;
+    private long testId;
     private int tableNumber;
     private OrderState orderState;
     private String remarks;
@@ -23,7 +23,7 @@ public class Test {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "TestWaiter", joinColumns = {
-            @JoinColumn(name = "TestId", referencedColumnName = "TestId")}, inverseJoinColumns = {
+            @JoinColumn(name = "testId", referencedColumnName = "testId")}, inverseJoinColumns = {
             @JoinColumn(name = "waiterId", referencedColumnName = "waiterId")})
     private Waiter waiter;
 
@@ -31,7 +31,7 @@ public class Test {
 
     public Test (long id, int tableNumber, String remarks, OrderState orderState, boolean isPaid, float balance) {
         super();
-        this.TestId = id;
+        this.testId = id;
         this.tableNumber = tableNumber;
         this.remarks = remarks;
         this.orderState = orderState;
@@ -40,11 +40,11 @@ public class Test {
     }
 
     public long getId() {
-        return TestId;
+        return testId;
     }
 
     public void setId(long id) {
-        this.TestId = id;
+        this.testId = id;
     }
 
     public int getTableNumber() {
