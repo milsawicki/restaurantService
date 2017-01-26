@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 @SpringBootApplication(scanBasePackages = {"Package"})
 @EntityScan(basePackages = {"Package.Entities"})
 @EnableJpaRepositories(basePackages = "Package.Repositories")
+
 public class RestaurantMain {
     public static void main(String[] args) {
         SpringApplication.run(RestaurantMain.class, args);

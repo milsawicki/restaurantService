@@ -18,6 +18,8 @@ public class Test {
     private int tableNumber;
     private OrderState orderState;
     private String remarks;
+    private boolean isPaid;
+    private float balance;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinTable(name = "TestWaiter", joinColumns = {
@@ -27,12 +29,14 @@ public class Test {
 
     public Test () {}
 
-    public Test (long id, int tableNumber, String remarks, OrderState orderState) {
+    public Test (long id, int tableNumber, String remarks, OrderState orderState, boolean isPaid, float balance) {
         super();
         this.TestId = id;
         this.tableNumber = tableNumber;
         this.remarks = remarks;
         this.orderState = orderState;
+        this.isPaid = isPaid;
+        this.balance = balance;
     }
 
     public long getId() {
@@ -74,6 +78,28 @@ public class Test {
 
     public OrderState getOrderState() {
         return orderState;
+    }
+
+    public void setIsPaid(boolean isPaid) {
+        this.setPaid(isPaid);};
+
+    public boolean getIsPaid() {
+        return isPaid();}
+
+    public boolean isPaid() {
+        return isPaid;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
+    }
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
     }
 }
 
